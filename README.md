@@ -119,11 +119,24 @@ See comments at top of heater40C.py for command testing.
 This allows monitoring of the heater current and supply voltage to the remote sensing unit that can be outdoors on a long length of twin cable (black wire left bottom).  
 The green phono plug (bottom left) is the supply input, here connected via a 1 Amp fuse to a 12v Leisure battery on trickle charge.  
 
+![ammeterVoltmeter.jpg](ammeterVoltmeter.jpg)  
+ammeterVoltmeter.jpg 
+
 ![Volts Amps Monitor](heater40CpowerAmmeterMonitor.jpg)  
-heater40CpowerAmmeterMonitor.jpg
+heater40CpowerAmmeterMonitor.jpg  
+red blue 4 'bit' selected.  
+Has thinwire: red yellow black, thickwire red and black  
 
 ![ammeter Wiring In Box](ammeterWiringInBox.png)  
-ammeterWiringInBox.png (see also original ammeterWiringInBox.dia)
+ammeterWiringInBox.png (see also original ammeterWiringInBox.dia)  
+``` 
+Battery +12V -> thick red -> SHUNT -> thick black --> Heater --> Battery 0V  
+Thin red ------------------------> Battery +12V (meter power)  
+Thin black ----------------------> Battery 0V (meter ground)  
+Thin yellow ---------------------> optional Battery +12V (voltage reading)
+--> is long cable
+```  
+If voltage sensing yellow is disconnected the meter cannot measure voltage&the voltmeter portion stays blank or shows 0 V.
 
 ![Ammeter Circuit](ammeterCircuit.jpg)  
 ammeterCircuit.jpg 
