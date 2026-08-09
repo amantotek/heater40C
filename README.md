@@ -53,7 +53,6 @@ Waterproof box (if mounted outside)
 Ebay Example: ESR ENCLOSURE JUNCTION BOX ADAPTABLE PVC PLASTIC IP56 WATERPROOF GREY
 100mm x 100mm x 50mm
 
-
 USB Cable A plug to USB C plug: One short during operation and one long for development.
 
 **IMPORTANT** In operation use a short USB A plug to USB C plug to drive the ESP32 and some of the circuitry.
@@ -63,7 +62,8 @@ This is important to avoid overloading the laptop USB socket with the heater ele
 
 ## How It Works
 
-Periodically 
+Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.
+
 
 ## Installation
 
