@@ -26,6 +26,7 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 ## Circuit
 ![KiCAD Circuit](schematic20250410.jpg)
 
+schematic20250410.jpg
 
 ## How It Works
 
