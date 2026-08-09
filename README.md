@@ -63,6 +63,9 @@ into a file named "dst.rule" and save in ESP32 flash.
 
 ## Power Supply
 
+![Volts Amps Monitor](heater40CpowerAmmeterMonitor.jpg)  
+heater40CpowerAmmeterMonitor.jpg
+
 ![Ammeter Circuit](ammeterCircuit.jpg)  
 ammeterCircuit.jpg 
 
