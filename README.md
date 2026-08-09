@@ -27,6 +27,9 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 ![KiCAD Circuit](20250817kcHeaterschematic.jpg)  
 20250817kcHeaterschematic.jpg
 
+![DS18B20 pinout](DS18B20pinout.jpg)  
+DS18B20pinout.jpg
+
 ## How It Works
 
 Periodically 
