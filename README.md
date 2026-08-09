@@ -24,9 +24,8 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 - other shared modules with filenames starting with mod
 
 ## Circuit
-![KiCAD Circuit](20250817kcHeaterschematic.jpg)
-
-schematic20250410.jpg
+![KiCAD Circuit](20250817kcHeaterschematic.jpg)  
+20250817kcHeaterschematic.jpg
 
 ## How It Works
 
@@ -57,7 +56,12 @@ into a file named "dst.rule" and save in ESP32 flash.
 
 ## Test Setup
 
-#![Test Rig](calibTestSetup.jpg)  
+#![Test Rig](calibTestSetup.jpg) 
+
+## Power Supply
+
+![Ammeter Circuit](ammeterCircuit.jpg)  
+ammeterCircuit.jpg 
 
 ## Version History
 
