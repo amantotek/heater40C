@@ -24,7 +24,7 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 - other shared modules with filenames starting with mod
 
 ## Circuit
-![KiCAD Circuit](schematic20250410.jpg)
+![KiCAD Circuit](20250817kcHeaterschematic.jpg)
 
 schematic20250410.jpg
 
