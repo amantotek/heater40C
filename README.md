@@ -111,13 +111,15 @@ See top comments for usage
 The two temperature sensors with heater off should send back similar data if not far apart and under same conditions e.g. shade wind
 See comments at top of heater40C.py for command testing.
 
-## Power Supply
-
-![ammeter Wiring In Box](ammeterWiringInBox.png)  
-ammeterWiringInBox.png (see also original ammeterWiringInBox.dia)
+## Indoor Power Supply
+This allows monitoring of the heater current and supply voltage to the remote sensing unit that can be outdoors on a long length of twin cable (black wire left bottom).  
+The green phono plug (bottom left) is the supply input, here connected via a 1 Amp fuse to a 12v Leisure battery on trickle charge.  
 
 ![Volts Amps Monitor](heater40CpowerAmmeterMonitor.jpg)  
 heater40CpowerAmmeterMonitor.jpg
+
+![ammeter Wiring In Box](ammeterWiringInBox.png)  
+ammeterWiringInBox.png (see also original ammeterWiringInBox.dia)
 
 ![Ammeter Circuit](ammeterCircuit.jpg)  
 ammeterCircuit.jpg 
