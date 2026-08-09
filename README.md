@@ -1,6 +1,9 @@
 # heater40C
 
-A MicroPython-based electronic project using high accuracy chainable temperature sensors
+A MicroPython-based electronic project using high accuracy chainable temperature sensors.
+A heater can be switched on or off remotedly.
+One sensor measures ambient degC and other heater degC.
+More temperature sensors can readily be added, they are on a 3 wire bus.
 
 ## Equipment
 
@@ -27,8 +30,36 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 ![KiCAD Circuit](20250817kcHeaterschematic.jpg)  
 20250817kcHeaterschematic.jpg
 
+## Component List
+
 ![DS18B20 pinout](DS18B20pinout.jpg)  
-DS18B20pinout.jpg
+DS18B20 pinout DS18B20pinout.jpg
+
+![IRLZ44N pinout 1/2](IRLZ44Npinout1.jpg)  
+IRLZ44N pinout 1/2 IRLZ44Npinout1.jpg
+
+![IRLZ44N pinout 2/2](IRLZ44NpinoutVishay.jpg)  
+IRLZ44N pinout 2/2 IRLZ44NpinoutVishay.jpg
+
+![pc817 pinout](pc817pinout.jpg)  
+pc817 Optocoupler pinout pc817pinout.jpg
+
+![5v USB out Step Down Power Supply](5vUSBoutStepDownPowerSupply.jpg)  
+viztech 5v USB out Step Down Power Supply 5vUSBoutStepDownPowerSupply.jpg
+https://viztech.co.uk/product/down-usba/
+
+![boxOutdoors.jpg](boxOutdoors.jpg)  
+Waterproof box (if mounted outside)
+Ebay Example: ESR ENCLOSURE JUNCTION BOX ADAPTABLE PVC PLASTIC IP56 WATERPROOF GREY
+100mm x 100mm x 50mm
+
+
+USB Cable A plug to USB C plug: One short during operation and one long for development.
+
+**IMPORTANT** In operation use a short USB A plug to USB C plug to drive the ESP32 and some of the circuitry.
+The built in Step Down Power Supply powers the complete circuit during normal operation.
+Whilst developing under say Thonny disconnect the heater (the banana plug and socket in line with the heater element) and power the ESP32 instead from a laptop via the longer USB cable.
+This is important to avoid overloading the laptop USB socket with the heater element drawing current.
 
 ## How It Works
 
@@ -49,19 +80,41 @@ SSID::PASSWORD::Region
 SSID and PASSWORD can contain a large range of characters including a space character.
 Region is a single uppercase letter. L=London time and P=Paris time 
 The file is then saved in ESP32 flash.
+See module's top comments for further information.
 
 2) **modMQTpub**  
 mqcons.py here is a template to be filled in with data from an MQTT server such as HiveMQ, and saved in ESP32 flash.
+
+```python
+gsFilNom = "mqcons.py" #Written in MicroPython for ESP32 WROOM
+gsVEERSN = gsFilNom + " V001" # Add send to MQTT server
+sBrokerHost = "xxxxxxxxxxxxxxxxxxxxxxxx.s1.eu.hivemq.cloud"
+iBrokerPort = 8883
+sMqttUser = "yourUser"
+sMqttPassword = "yourPass"
+# ----END----
+```
 
 3) **modDateTime**  
 Write the daylight saving string defined at the start of the module
 into a file named "dst.rule" and save in ESP32 flash.
 
+4) **modKeepAlive**
+See top comments for usage
+
+5) **modOTAserver**
+See top comments for usage
+
+
 ## Test Setup
 
-#![Test Rig](calibTestSetup.jpg) 
+The two temperature sensors with heater off should send back similar data if not far apart and under same conditions e.g. shade wind
+See comments at top of heater40C.py for command testing.
 
 ## Power Supply
+
+![ammeter Wiring In Box](ammeterWiringInBox.png)  
+ammeterWiringInBox.png (see also original ammeterWiringInBox.dia)
 
 ![Volts Amps Monitor](heater40CpowerAmmeterMonitor.jpg)  
 heater40CpowerAmmeterMonitor.jpg
@@ -70,5 +123,6 @@ heater40CpowerAmmeterMonitor.jpg
 ammeterCircuit.jpg 
 
 ## Version History
+
 
 Each MicroPython file has Filename and Version in the first two lines.
