@@ -14,11 +14,6 @@ The assembled project shown outdoors
 
 This project uses an ESP32 to obtain temperature data that is transmitted to other systems via MQTT.
 
-## Main Components
-
-- NodeMcu ESP32 WROOM-32 Type C CH340C Development Board Dual Core WiFi Bluetooth
-
-
 ## Software
 
 - Written in MicroPython
@@ -31,43 +26,44 @@ This project uses an ESP32 to obtain temperature data that is transmitted to oth
 
 ## Component List
 
+NodeMcu ESP32 WROOM-32 Type C CH340C Development Board Dual Core WiFi Bluetooth
+
 ![DS18B20 pinout](DS18B20pinout.jpg)  
-DS18B20 pinout DS18B20pinout.jpg
+DS18B20 pinout DS18B20pinout.jpg  
 
 ![IRLZ44N pinout 1/2](IRLZ44Npinout1.jpg)  
-IRLZ44N pinout 1/2 IRLZ44Npinout1.jpg
+IRLZ44N pinout 1/2 IRLZ44Npinout1.jpg  
 
 ![IRLZ44N pinout 2/2](IRLZ44NpinoutVishay.jpg)  
-IRLZ44N pinout 2/2 IRLZ44NpinoutVishay.jpg
+IRLZ44N pinout 2/2 IRLZ44NpinoutVishay.jpg  
 
 ![pc817 pinout](pc817pinout.jpg)  
-pc817 Optocoupler pinout pc817pinout.jpg
+pc817 Optocoupler pinout pc817pinout.jpg  
 
 ![5v USB out Step Down Power Supply](5vUSBoutStepDownPowerSupply.jpg)  
-viztech 5v USB out Step Down Power Supply 5vUSBoutStepDownPowerSupply.jpg
-https://viztech.co.uk/product/down-usba/
+viztech 5v USB out Step Down Power Supply 5vUSBoutStepDownPowerSupply.jpg  
+https://viztech.co.uk/product/down-usba/  
 
 ![boxOutdoors.jpg](boxOutdoors.jpg)  
-Waterproof box (if mounted outside)
-Ebay Example: ESR ENCLOSURE JUNCTION BOX ADAPTABLE PVC PLASTIC IP56 WATERPROOF GREY
-100mm x 100mm x 50mm
+Waterproof box (if mounted outside)  
+Ebay Example: ESR ENCLOSURE JUNCTION BOX ADAPTABLE PVC PLASTIC IP56 WATERPROOF GREY  
+100mm x 100mm x 50mm  
 
-USB Cable A plug to USB C plug: One short during operation and one long for development.
+USB Cable A plug to USB C plug: One short during operation and one long for development.  
 
 **IMPORTANT** In operation use a short USB A plug to USB C plug to drive the ESP32 and some of the circuitry.  
 The built in Step Down Power Supply powers the complete circuit during normal operation.  
 Whilst developing under say Thonny disconnect the heater (the banana plug and socket in line with the heater element) and power the ESP32 instead from a laptop via the longer USB cable.  
-This is important to avoid overloading the laptop USB socket with the heater element drawing current.
+This is important to avoid overloading the laptop USB socket with the heater element drawing current.  
 
 ## How It Works
 
 Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.  
-The /rh command must be sent regularly to keep the heater on. See comments at top of heater40C.py
+The /rh command must be sent regularly to keep the heater on. See comments at top of heater40C.py  
 
 ![Display of Output From MQTT subscribing](displayOfOutputFromMQTTsubscribing.jpg)  
 Display of Output From MQTT subscribing (displayOfOutputFromMQTTsubscribing.jpg)  
 See bottom yellow band A=Ambient H=Heater temperatures
-
 
 ## Installation
 
@@ -109,7 +105,6 @@ See top comments for usage
 5) **modOTAserver**
 See top comments for usage
 
-
 ## Test Setup
 
 The two temperature sensors with heater off should send back similar data if not far apart and under same conditions e.g. shade wind
@@ -120,7 +115,7 @@ This allows monitoring of the heater current and supply voltage to the remote se
 The green phono plug (bottom left) is the supply input, here connected via a 1 Amp fuse to a 12v Leisure battery on trickle charge.  
 
 ![ammeterVoltmeter.jpg](ammeterVoltmeter.jpg)  
-ammeterVoltmeter.jpg 
+ammeterVoltmeter.jpg 4-Bits 100V/10A  
 
 ![Volts Amps Monitor](heater40CpowerAmmeterMonitor.jpg)  
 heater40CpowerAmmeterMonitor.jpg  
@@ -136,12 +131,11 @@ Thin black ----------------------> Battery 0V (meter ground)
 Thin yellow ---------------------> optional Battery +12V (voltage reading)
 --> is long cable
 ```  
-If voltage sensing yellow is disconnected the meter cannot measure voltage&the voltmeter portion stays blank or shows 0 V.
+If voltage sensing yellow is disconnected the meter cannot measure voltage and the voltmeter portion stays blank or shows 0 V.
 
 ![Ammeter Circuit](ammeterCircuit.jpg)  
 ammeterCircuit.jpg 
 
 ## Version History
-
 
 Each MicroPython file has Filename and Version in the first two lines.
