@@ -7,9 +7,8 @@ More temperature sensors can readily be added, they are on a 3 wire bus.
 
 ## Equipment
 
-#![The assembled equipment](ct3PZEMboxedView.jpg)
-
-The assembled project showing the ESP32, PZEM module.
+#![The assembled equipment TO BE ADDED](xxx.jpg)  
+The assembled project shown outdoors
 
 ## Project Overview
 
@@ -63,6 +62,11 @@ This is important to avoid overloading the laptop USB socket with the heater ele
 ## How It Works
 
 Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.
+The /rh command must be sent regularly to keep the heater on. See comments at top of heater40C.py
+
+[Display of Output From MQTT subscribing](displayOfOutputFromMQTTsubscribing.jpg)  
+Display of Output From MQTT subscribing displayOfOutputFromMQTTsubscribing.jpg
+See bottom yellow band A=Ambient H=Heater temperatures
 
 
 ## Installation
