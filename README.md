@@ -54,18 +54,18 @@ Ebay Example: ESR ENCLOSURE JUNCTION BOX ADAPTABLE PVC PLASTIC IP56 WATERPROOF G
 
 USB Cable A plug to USB C plug: One short during operation and one long for development.
 
-**IMPORTANT** In operation use a short USB A plug to USB C plug to drive the ESP32 and some of the circuitry.
-The built in Step Down Power Supply powers the complete circuit during normal operation.
-Whilst developing under say Thonny disconnect the heater (the banana plug and socket in line with the heater element) and power the ESP32 instead from a laptop via the longer USB cable.
+**IMPORTANT** In operation use a short USB A plug to USB C plug to drive the ESP32 and some of the circuitry.  
+The built in Step Down Power Supply powers the complete circuit during normal operation.  
+Whilst developing under say Thonny disconnect the heater (the banana plug and socket in line with the heater element) and power the ESP32 instead from a laptop via the longer USB cable.  
 This is important to avoid overloading the laptop USB socket with the heater element drawing current.
 
 ## How It Works
 
-Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.
+Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.  
 The /rh command must be sent regularly to keep the heater on. See comments at top of heater40C.py
 
 ![Display of Output From MQTT subscribing](displayOfOutputFromMQTTsubscribing.jpg)  
-Display of Output From MQTT subscribing displayOfOutputFromMQTTsubscribing.jpg
+Display of Output From MQTT subscribing (displayOfOutputFromMQTTsubscribing.jpg)  
 See bottom yellow band A=Ambient H=Heater temperatures
 
 
