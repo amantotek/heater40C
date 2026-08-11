@@ -3,16 +3,17 @@
 A MicroPython-based electronic project using high accuracy chainable temperature sensors.
 A heater can be switched on or off remotedly.
 One sensor measures ambient degC and other heater degC.
-More temperature sensors can readily be added, they are on a 3 wire bus.
+More temperature sensors can readily be added.
 
 ## Equipment
 
-#![The assembled equipment TO BE ADDED](xxx.jpg)  
-The assembled project shown outdoors
+#![The assembled equipment](heater40Cinstallation.jpg)  
+The assembled project shown outdoors. The temperature sensors and heater are external to the control box.
 
 ## Project Overview
 
 This project uses an ESP32 to obtain temperature data that is transmitted to other systems via MQTT.
+Remotedly a heater can be turned off and on limited to a set threshold temperature witha maximum of 40 degC.
 
 ## Software
 
@@ -59,7 +60,7 @@ This is important to avoid overloading the laptop USB socket with the heater ele
 ## How It Works
 
 Temperature readings will be sent periodically together with a hh:mm timestamp to show the readings are fresh.  
-The /rh command must be sent regularly to keep the heater on. See comments at top of heater40C.py  
+The /rh command must be sent regularly to keep the heater on, a fail safe feature. See comments at top of heater40C.py  
 
 ![Display of Output From MQTT subscribing](displayOfOutputFromMQTTsubscribing.jpg)  
 Display of Output From MQTT subscribing (displayOfOutputFromMQTTsubscribing.jpg)  
@@ -69,6 +70,9 @@ See bottom yellow band A=Ambient H=Heater temperatures
 
 The ESP32 was programmed using Thonny on a Linux Xubuntu system. Thonny is available for Windows, macOS and Linux, so the same MicroPython development environment can be used regardless of the computer's operating system.
 Alternatives exist but Thonny as the simplest cross-platform choice.
+A USB cable simply connects the ESP32 to a USB port on say a laptop.
+An easy way to work is to copy and paste entire master file contents from laptop to Thonny when making changes.
+Once deployed modOTAserver can be used to make changes over the air to any file stored on the ESP32 flash.
 
 ## Configuration
 
@@ -134,7 +138,18 @@ Thin yellow ---------------------> optional Battery +12V (voltage reading)
 If voltage sensing yellow is disconnected the meter cannot measure voltage and the voltmeter portion stays blank or shows 0 V.
 
 ![Ammeter Circuit](ammeterCircuit.jpg)  
-ammeterCircuit.jpg 
+ammeterCircuit.jpg  
+
+## Original Usage
+This equipment is being used to remote control a Daikin Altherma heat pump without making any direct electrical connections to the Daikin equipment.  
+The Leaving Water Temperature (LWT) of hot water entering the house into the radiators depends on the outside air temperature (OT) mostly setup a a linear function.  
+
+![LWT vs OT](heatPumpLWTversusOT.jpg)
+heatPumpLWTversusOT.jpg  
+
+By adjusting OT we can affect LWT. If we don't want radiator heat OT can be raised to its maximum.  
+This gets around the problem where installers fit a single indoor thermostat often by the front door to control a complete house.  
+We can now distribute hot radiator water to zones as needed, effectively turn off or wind down the heat pump when not needed and bypass the Daikin central thermostat with its not highly accurate temperature sensor.  
 
 ## Version History
 
